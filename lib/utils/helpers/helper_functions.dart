@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+
 class THelperFunctions{
   static Color? getColor(String value){
 
@@ -30,6 +31,7 @@ class THelperFunctions{
     }else if (value == 'Indigo'){
       return Colors.indigo;
     }
+    return null;
   }
   static void showSnackBar(String message){
     ScaffoldMessenger.of(Get.context!).showSnackBar(
