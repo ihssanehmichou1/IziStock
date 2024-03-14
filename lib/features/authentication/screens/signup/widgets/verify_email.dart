@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../utils/constants/image_strings.dart';
-import '../../../../../../utils/constants/sizes.dart';
-import '../../../../../../utils/constants/text_strings.dart';
-import '../../../../../../utils/helpers/helper_functions.dart';
-import '../../../login/login.dart';
+import '../../../../../utils/constants/image_strings.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/helpers/helper_functions.dart';
+import '../../login/login.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({Key? key});
@@ -24,7 +24,7 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               ///images
@@ -39,11 +39,11 @@ class VerifyEmailScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
-              // const Text(
-              //   TextStrings.confirmEmailText,
-              //   style: Theme.of(context).textTheme.labelLarge,
-              //   textAlign: TextAlign.center,
-              // ),
+              const Text(
+                TextStrings.confirmEmailText,
+                style: Theme.of(context).textTheme.labelLarge,
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(
                 TTexts.confirmEmailSubTitle,

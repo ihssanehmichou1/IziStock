@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:izistock/features/authentication/screens/password_configuration/signup/widgets/terms_conditions.dart';
+import 'package:izistock/features/authentication/screens/signup/widgets/terms_conditions.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
-import '../../../../../../utils/constants/sizes.dart';
-import '../../../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/constants/text_strings.dart';
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({

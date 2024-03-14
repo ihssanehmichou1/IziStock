@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:izistock/common/styles/widgets/login_signup/form_divider.dart';
 import 'package:izistock/common/styles/widgets/login_signup/social_buttons.dart';
-import 'package:izistock/features/authentication/screens/password_configuration/signup/widgets/signup_form.dart';
+import 'package:izistock/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:izistock/utils/constants/sizes.dart';
 import 'package:izistock/utils/constants/text_strings.dart';
 

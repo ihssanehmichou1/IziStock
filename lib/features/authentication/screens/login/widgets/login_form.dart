@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:izistock/features/authentication/screens/password_configuration/signup/widgets/signup.dart';
+import 'package:izistock/features/authentication/screens/signup/widgets/signup.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
