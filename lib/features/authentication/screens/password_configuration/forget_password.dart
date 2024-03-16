@@ -8,14 +8,14 @@ import '../../../../utils/constants/text_strings.dart';
 
 
 class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key});
+  const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.all(TSizes.defaultSpace),
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

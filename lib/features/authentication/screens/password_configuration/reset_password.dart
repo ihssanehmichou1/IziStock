@@ -8,7 +8,7 @@ import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
 class ResetPassword extends StatelessWidget {
-  const ResetPassword({Key? key});
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +33,7 @@ class ResetPassword extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.done)),
             ),
+            const SizedBox(height: TSizes.spaceBtwItems),
             SizedBox(
               width: double.infinity,
               child: TextButton(onPressed: () {}, child: const Text(TTexts.resendEmail)),

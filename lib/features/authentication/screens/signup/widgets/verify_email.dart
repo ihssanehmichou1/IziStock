@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:izistock/common/widgets/success_screen/success_screen.dart';
 
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
@@ -9,12 +10,13 @@ import '../../../../../utils/helpers/helper_functions.dart';
 import '../../login/login.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({Key? key});
+  const VerifyEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () => Get.offAll(() => const LoginScreen()),
@@ -30,8 +32,9 @@ class VerifyEmailScreen extends StatelessWidget {
               ///images
               Image(
                 image: const AssetImage(TImages.deliveredEmailIllustration),
-                width: THelperFunctions.screenWidth() * 0.6,
+                width: THelperFunctions.screenWidth() * 0.6
               ),
+                const SizedBox(height: TSizes.spaceBtwSections),
               ///Title & SubTitle
               Text(
                 TTexts.confirmEmail,
@@ -39,8 +42,8 @@ class VerifyEmailScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
-              const Text(
-                TextStrings.confirmEmailText,
+               Text(
+                'banat@gmail.com',
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -52,13 +55,17 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               const SizedBox(height: TSizes.spaceBtwSections),
               /// buttons
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(TTexts.tContinue),
-                ),
+              ElevatedButton(
+                onPressed: () => Get.to(
+                        () => const SuccessScreen(
+                          image: TImages.staticSuccessIllustration,
+                          title: TTexts.yourAccountCreatedTitle,
+                          subTitle: TTexts.yourAccountCreatedSubTitle,
+                          onPressed: () => Get.to(() => const LoginScreen()),
+                        )),
+                child: const Text(TTexts.tContinue),
               ),
+
               const SizedBox(height: TSizes.spaceBtwItems),
               SizedBox(
                 width: double.infinity,
