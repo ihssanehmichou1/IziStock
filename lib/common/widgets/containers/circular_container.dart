@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/constants/colors.dart';
+
 class TCircularContainer extends StatelessWidget {
   const TCircularContainer({
-    Key? key,
+    super.key,
     this.width = 400,
     this.height = 400,
     this.radius = 400,
     this.padding = 0,
-    this.backgroundColor = Colors.white,
-    this.child,
-  }) : super(key: key);
+    this.backgroundColor = TColors.white,
+    this.child, required EdgeInsets margin,
+  });
 
   final double width;
   final double height;

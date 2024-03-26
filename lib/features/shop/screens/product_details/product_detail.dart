@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:izistock/common/widgets/appbar/appbar.dart';
-import 'package:izistock/common/widgets/curved_edges/curved_edges_widget.dart';
 import 'package:izistock/common/widgets/texts/section_heading.dart';
 import 'package:izistock/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:izistock/features/shop/screens/product_details/widgets/product_attributs.dart';
@@ -12,19 +8,17 @@ import 'package:izistock/features/shop/screens/product_details/widgets/product_d
 import 'package:izistock/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:izistock/features/shop/screens/product_details/widgets/rating_share_widget.dart';
 import 'package:izistock/features/shop/screens/product_reviews/product_reviews.dart';
-import 'package:izistock/utils/constants/colors.dart';
+
 import 'package:izistock/utils/helpers/helper_functions.dart';
 import 'package:readmore/readmore.dart';
-
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({super.key});
-
+  static dynamic dark;
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       bottomNavigationBar: const TBottomAddCart(),
       body: SingleChildScrollView(
@@ -35,23 +29,32 @@ class ProductDetail extends StatelessWidget {
 
             ///Product Details
             Padding(
-              padding: const EdgeInsets.only(right: TSizes.defaultSpace,left: TSizes.defaultSpace,bottom: TSizes.defaultSpace),
+              padding: const EdgeInsets.only(
+                  right: TSizes.defaultSpace,
+                  left: TSizes.defaultSpace,
+                  bottom: TSizes.defaultSpace),
               child: Column(
                 children: [
                   ///Rating and Share
                   const TRatingAndShare(),
+
                   ///Price title stack brands
                   const TProductMetaData(),
+
                   ///Attributes
                   const TProductAttributes(),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   ///checkout
-                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: (){}, child: const Text('Checkout'))),
+                  SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          onPressed: () {}, child: const Text('Checkout'))),
                   const SizedBox(height: TSizes.spaceBtwSections),
 
                   ///description
-                  const TSectionHeading(title: 'Description', showActionButton: false),
+                  const TSectionHeading(
+                      title: 'Description', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   const ReadMoreText(
                     'This is a Product descrition for purple nike ',
@@ -59,8 +62,10 @@ class ProductDetail extends StatelessWidget {
                     trimMode: TrimMode.Line,
                     trimCollapsedText: 'Show more',
                     trimExpandedText: 'Less',
-                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
 
                   ///reviews
@@ -69,12 +74,15 @@ class ProductDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TSectionHeading(title: 'Reviews(199)', showActionButton: false),
-                      IconButton(icon: const Icon(Iconsax.arrow_right_3, size: 18), onPressed: () => Get.to( () => const ProductReviewsScreen())),
+                      const TSectionHeading(
+                          title: 'Reviews(199)', showActionButton: false),
+                      IconButton(
+                          icon: const Icon(Iconsax.arrow_right_3, size: 18),
+                          onPressed: () =>
+                              Get.to(() => const ProductReviewsScreen())),
                     ],
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
-
                 ],
               ),
             )
@@ -84,5 +92,3 @@ class ProductDetail extends StatelessWidget {
     );
   }
 }
-
-

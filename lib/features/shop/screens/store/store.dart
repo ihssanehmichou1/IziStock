@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izistock/common/widgets/brands/brand_card.dart';
 import '../../../../common/widgets/appbar/appbar.dart';
 import '../../../../common/widgets/containers/search_container.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
@@ -6,9 +7,8 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
-
 class StoreScreen extends StatelessWidget {
-  const StoreScreen({Key? key});
+  const StoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,9 @@ class StoreScreen extends StatelessWidget {
                 floating: true,
                 expandedHeight: 440,
                 automaticallyImplyLeading: false,
-                backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
+                backgroundColor: THelperFunctions.isDarkMode(context)
+                    ? TColors.black
+                    : TColors.white,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(TSizes.spaceBtwItems),
                   child: ListView(
@@ -37,6 +39,8 @@ class StoreScreen extends StatelessWidget {
                         showBorder: true,
                         showBackGround: false,
                         padding: EdgeInsets.zero,
+                        text: 'hello',
+                        showBackground: false,
                       ),
                       const SizedBox(height: TSizes.spaceBtwItems),
                       TSectionHeading(
@@ -44,12 +48,15 @@ class StoreScreen extends StatelessWidget {
                         onPressed: () => print('Pressed'),
                       ),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-                      GridLayout(
+                      GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 4, childAspectRatio: 1),
                         itemCount: 4,
-                        mainAxisExtent: 88,
+                        semanticChildCount: 4,
                         itemBuilder: (_, index) {
                           // In the Backend Tutorial, we will pass the Each Brand & onPress Event also.
-                          return const BrandCard(showBorder: false);
+                          return const TBrandCard(showBorder: false);
                         },
                       ),
                     ],
@@ -62,7 +69,9 @@ class StoreScreen extends StatelessWidget {
                     isScrollable: true,
                     indicatorColor: Colors.amber,
                     unselectedLabelColor: Colors.teal,
-                    labelColor: THelperFunctions.isDarkMode(context) ? Colors.white : Colors.amber,
+                    labelColor: THelperFunctions.isDarkMode(context)
+                        ? Colors.white
+                        : Colors.amber,
                     tabs: const [
                       Tab(child: Text('Sports')),
                       Tab(child: Text('Furniture')),
@@ -96,10 +105,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context,
-      double shrinkOffset,
-      bool overlapsContent,
-      ) {
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return _tabBar;
   }
 

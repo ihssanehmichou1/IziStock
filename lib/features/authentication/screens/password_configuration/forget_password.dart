@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:izistock/features/authentication/screens/password_configuration/reset_password.dart';
 
 import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/constants/text_strings.dart';
+import '../../../../utils/constants/text_String.dart';
 
 
 class ForgetPassword extends StatelessWidget {

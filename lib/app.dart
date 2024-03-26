@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:izistock/bindings/general_bindings.dart';
 import 'package:izistock/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:izistock/utils/constants/colors.dart';
 import 'package:izistock/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
@@ -12,7 +14,8 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: const OnboardingScreen(),
+      initialBinding: GeneralBinding(),
+      home: const Scaffold(backgroundColor: TColors.primary,body: Center(child: CircularProgressIndicator(color: Colors.white))),
     );
   }
 }

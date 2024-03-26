@@ -14,8 +14,7 @@ class TCircularImage extends StatelessWidget{
     required this.image,
     this.fit = BoxFit.cover,
     this.padding = TSizes.sm,
-    this.isNetworkImage = false,
-    // required bool isNetWorkImage,
+    this.isNetworkImage = false, required bool isNetWorkImage,
   });
 
   final BoxFit? fit;

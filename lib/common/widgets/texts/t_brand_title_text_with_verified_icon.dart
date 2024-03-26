@@ -12,8 +12,9 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
     required this.maxLines,
     required this.brandTextSizes,
     this.textColor,
-    this.iconColor = TColors.center,
+    this.iconColor = TColors.black,
     this.textAlign = TextAlign.center,
+    required TextSizes brandTextSize,
   });
 
   final String title;
@@ -42,5 +43,3 @@ class TBrandTitleWithVerifiedIcon extends StatelessWidget {
     );
   }
 }
-
-

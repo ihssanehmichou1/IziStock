@@ -40,10 +40,10 @@ class TColors{
   static const Color borderSecondary = Color(0xFFE6E6E6);
 
   //Error and Validation Colors
-static const Color error = Color(0xFFD32F2F);
-static const Color success = Color(0xFF388E3C);
-static const Color warning = Color(0xFFF57C00);
-static const Color info = Color(0xFF1976D2);
+  static const Color error = Color(0xFFD32F2F);
+  static const Color success = Color(0xFF388E3C);
+  static const Color warning = Color(0xFFF57C00);
+  static const Color info = Color(0xFF1976D2);
 
 //Neutral Shades
   static const Color black = Color(0xFF232323);

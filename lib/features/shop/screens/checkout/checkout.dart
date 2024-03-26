@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:izistock/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:izistock/common/widgets/products/cart/coupon_widget.dart';
 import 'package:izistock/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:izistock/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:izistock/features/shop/screens/checkout/widgets/billing_amount_section.dart';
@@ -9,40 +9,42 @@ import 'package:izistock/features/shop/screens/checkout/widgets/billing_payment_
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
-import '../../../../common/widgets/products/cart/coupon_widget.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class CheckoutScreen extends StatelessWidget {
-  const CheckoutScreen({Key? key}):super(key: key);
-
+  const CheckoutScreen({super.key});
+  static dynamic dark;
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
-      appBar: TAppBar(showBackArrow: true,title: Text('Order Review', style: Theme.of(context).textTheme.headlineSmall)),
-      body:  SingleChildScrollView(
+      appBar: TAppBar(
+          showBackArrow: true,
+          title: Text('Order Review',
+              style: Theme.of(context).textTheme.headlineSmall)),
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
               ///ITems in cart
-              const TCartItems(showAddRemoveButtons: false),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              TCartItems(showAddRemoveButtons: false),
+              SizedBox(height: TSizes.spaceBtwSections),
 
               ///Coupon TextField
-              TCouponCode(),
-              const SizedBox(height: TSizes.spaceBtwSections),
+              TCouponCode(
+                dark: false,
+              ),
+              SizedBox(height: TSizes.spaceBtwSections),
 
               ///Billing Section
               TRoundedContainer(
-                  showBorder:true,
-                  padding:const EdgeInsets.all(TSizes.md),
-                  backgroundColor: dark ? TColors.black :TColors.white,
-                  child: const Column(
+                  showBorder: true,
+                  padding: EdgeInsets.all(TSizes.md),
+                  backgroundColor: TColors.white,
+                  child: Column(
                     children: [
-
-
                       ///pricing
                       TBillingAmountSection(),
                       SizedBox(height: TSizes.spaceBtwItems),
@@ -58,24 +60,19 @@ class CheckoutScreen extends StatelessWidget {
                       ///address
                       TBillingAddressSection()
                     ],
-                  )
-
-              ),
+                  )),
             ],
           ),
         ),
       ),
 
-
       /// CHECKOUT BUTTON
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(onPressed: () => Get.to(() => const CheckoutScreen()), child: const Text('Checkout \$256.0')),
+        child: ElevatedButton(
+            onPressed: () => Get.to(() => const CheckoutScreen()),
+            child: const Text('Checkout \$256.0')),
       ),
     );
-
   }
 }
-
-
-

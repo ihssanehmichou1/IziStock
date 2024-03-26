@@ -1,6 +1,6 @@
 {
-    "name": "izistock",
-    "short_name": "izistock",
+    "name": "eco_java",
+    "short_name": "eco_java",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

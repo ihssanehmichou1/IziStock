@@ -77,9 +77,9 @@ class TDeviceUtils{
       return false;
     }
   }
-   static bool isIOS(){
+  static bool isIOS(){
     return Platform.isIOS;
-   }
+  }
   static bool isAndroid(){
     return Platform.isAndroid;
   }

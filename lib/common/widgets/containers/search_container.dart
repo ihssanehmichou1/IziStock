@@ -8,7 +8,14 @@ import '../../../utils/helpers/helper_functions.dart';
 class TSearchContainer extends StatelessWidget {
   const TSearchContainer({
     super.key,
-    required this.text, this.icon,  this.showBackGround=true,  this.showBorder=true, this.onTap,
+    required this.text,
+    this.icon,
+    this.showBackGround=true,
+    this.showBorder=true,
+    this.onTap,
+    required bool searchInStore,
+    required bool showBackground,
+    required EdgeInsetsGeometry padding,
 
   });
 
@@ -48,3 +55,4 @@ class TSearchContainer extends StatelessWidget {
     );
   }
 }
+

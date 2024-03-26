@@ -1,14 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:izistock/common/widgets/appbar/appbar.dart';
 import 'package:izistock/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 import 'package:izistock/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 
 import '../../../../common/widgets/products/rating/rating_indicator.dart';
-import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
@@ -16,9 +11,10 @@ class ProductReviewsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       /// App_bar
-      appBar: const TAppBar(title: Text('Reviews & Rating'), showBackArrow: true),
+      appBar:
+          const TAppBar(title: Text('Reviews & Rating'), showBackArrow: true),
 
       /// body
       body: SingleChildScrollView(
@@ -26,14 +22,19 @@ class ProductReviewsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Rating and Reviews are verified and are from people who use the same type of device  that you use"),
-            const SizedBox(height: TSizes.spaceBtwItems,),
+            const Text(
+                "Rating and Reviews are verified and are from people who use the same type of device  that you use"),
+            const SizedBox(
+              height: TSizes.spaceBtwItems,
+            ),
 
             /// overall Product Rating
             const TOverallProductRating(),
             const TRatingBarIndicator(rating: 3.5),
             Text("12,611", style: Theme.of(context).textTheme.bodySmall),
-            const SizedBox(height: TSizes.spaceBtwSections,),
+            const SizedBox(
+              height: TSizes.spaceBtwSections,
+            ),
 
             ///User Reviews List
             const UserReviewCard(),
@@ -46,4 +47,3 @@ class ProductReviewsScreen extends StatelessWidget {
     );
   }
 }
-

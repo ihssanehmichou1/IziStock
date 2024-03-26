@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:izistock/common/widgets/appbar/appbar.dart';
 import 'package:izistock/features/shop/screens/order/widgets/orders_list.dart';
@@ -6,7 +5,7 @@ import 'package:izistock/features/shop/screens/order/widgets/orders_list.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class OrderScreen extends StatelessWidget {
-  const OrderScreen({Key? key}) : super(key:key);
+  const OrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

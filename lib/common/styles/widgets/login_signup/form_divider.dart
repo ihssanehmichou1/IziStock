@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/text_strings.dart';
+import '../../../../utils/constants/text_String.dart';
 
 class TFormDivider extends StatelessWidget {
   const TFormDivider({

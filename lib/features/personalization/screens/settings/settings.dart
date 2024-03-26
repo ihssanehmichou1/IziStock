@@ -10,21 +10,20 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: SingleChildScrollView(
-          child: Column(
+      child: Column(
+        children: [
+          /// header
+          TPrimaryHeaderContainer(
+              child: Column(
             children: [
-              /// header
-              TPrimaryHeaderContainer(
-                  child: Column(
-                    children: [
-                      ///AppBar
-                      TAppBar(title: Text('Account' , style: Theme.of(context).textTheme))
-                    ],
-
-                  )
-              )
+              ///AppBar
+              TAppBar(
+                  title: Text('Account',
+                      style: TextStyle(fontFamily: AutofillHints.birthdayDay)))
             ],
-          ),
-        )
-    );
+          ))
+        ],
+      ),
+    ));
   }
 }

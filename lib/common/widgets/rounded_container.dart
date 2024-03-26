@@ -1,12 +1,9 @@
-// TODO Implement this library.
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/sizes.dart';
 
-class TRoundedContainer extends StatelessWidget{
+class TRoundedContainer extends StatelessWidget {
   const TRoundedContainer({
     super.key,
     this.child,
@@ -32,7 +29,8 @@ class TRoundedContainer extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Container( // corrected return
+    return Container(
+      // corrected return
       width: width,
       height: height,
       padding: padding,
@@ -46,4 +44,3 @@ class TRoundedContainer extends StatelessWidget{
     );
   }
 }
-

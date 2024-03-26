@@ -9,7 +9,6 @@ class TChoiceChip extends StatelessWidget {
     required this.text,
     required this.selected,
     this.onSelected,
-
   });
 
   final String text;
@@ -22,16 +21,22 @@ class TChoiceChip extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
       child: ChoiceChip(
-        label: isColor ? const SizedBox() :  Text(text),
+        label: isColor ? const SizedBox() : Text(text),
         selected: selected,
         onSelected: onSelected,
         labelStyle: TextStyle(color: selected ? TColors.white : null),
         avatar: isColor
-            ?  TCircularContainer(width: 50, height: 50, backgroundColor:  THelperFunctions.getColor(text)!) : null,
+            ? TCircularContainer(
+                width: 50,
+                height: 50,
+                backgroundColor: THelperFunctions.getColor(text)!,
+                margin: const EdgeInsets.all(2),
+              )
+            : null,
         shape: isColor ? const CircleBorder() : null,
-        labelPadding: isColor ?  const EdgeInsets.all(0) : null,
+        labelPadding: isColor ? const EdgeInsets.all(0) : null,
         padding: isColor ? const EdgeInsets.all(0) : null,
-        backgroundColor:isColor ? Colors.green : null,
+        backgroundColor: isColor ? Colors.green : null,
       ),
     );
   }

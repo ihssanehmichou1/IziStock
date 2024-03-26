@@ -6,7 +6,7 @@ import 'package:izistock/features/authentication/screens/signup/widgets/signup.d
 import 'package:izistock/navigation_menu.dart';
 
 import '../../../../../utils/constants/sizes.dart';
-import '../../../../../utils/constants/text_strings.dart';
+import '../../../../../utils/constants/text_String.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({

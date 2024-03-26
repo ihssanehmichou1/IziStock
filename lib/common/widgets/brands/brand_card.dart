@@ -13,19 +13,19 @@ class TBrandCard extends StatelessWidget {
   const TBrandCard({
     super.key,
     this.onTap,
-    required  this.showBorder,
+    required this.showBorder,
   });
 
   final bool showBorder;
   final void Function()? onTap;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     final isDark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: TRoundedContainer(
-        showBorder:  showBorder,
+        showBorder: showBorder,
         backgroundColor: Colors.transparent,
         padding: const EdgeInsets.all(TSizes.sm),
         child: Row(
@@ -33,23 +33,26 @@ class TBrandCard extends StatelessWidget {
           children: [
             Flexible(
               child: TCircularImage(
-                isNetworkImage: false,
-                image: TImages.colothIcon,
+                isNetWorkImage: false,
+                image: TImages.darkAppLogo,
                 backgroundColor: Colors.transparent,
                 overlayColor: isDark ? TColors.white : TColors.black,
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),
-
             const Expanded(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TBrandTitleWithVerifiedIcon(title: 'Nike', brandTextSizes: TextSizes.large, maxLines: 2,),
-                  ],
-                )
-            )
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TBrandTitleWithVerifiedIcon(
+                  title: 'Nike',
+                  brandTextSizes: TextSizes.large,
+                  maxLines: 3,
+                  brandTextSize: TextSizes.medium,
+                ),
+              ],
+            ))
           ],
         ),
       ),

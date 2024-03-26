@@ -1,22 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/device/device_utility.dart';
 
 class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar({
-    Key? key,
-    required this.title,
-    required this.showBackArrow,
+    super.key,
+    this.title,
+    this.showBackArrow = false,
     this.leadingIcon,
     this.leadingOnPressed,
     this.actions,
-  }) : super(key: key);
+  });
 
-  final Widget title;
+  final Widget? title;
   final bool showBackArrow;
   final IconData? leadingIcon;
   final VoidCallback? leadingOnPressed;

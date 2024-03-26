@@ -4,6 +4,7 @@ class Assets {
 
   static const String fontsPoppinsItalic = 'assets/fonts/Poppins-Italic.ttf';
   static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
+  static const String iconsIconsax = 'assets/icons/iconsax.dart';
   static const String logosIzistockHighResolutionLogo = 'assets/logos/izistock-high-resolution-logo.png';
   static const String logosIzistockHighResolutionLogoDark = 'assets/logos/izistock-high-resolution-logo-dark.jpg';
   static const String onBoardingImagesSammyLineDelivery = 'assets/images/on_boarding_images/sammy-line-delivery.gif';

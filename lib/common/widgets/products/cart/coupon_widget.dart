@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:izistock/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class TCouponCode extends StatelessWidget {
-  const TCouponCode({super.key,
+  const TCouponCode({
+    super.key,
     required this.dark,
   });
   final bool dark;
 
   @override
   Widget build(BuildContext context) {
-
     final dark = THelperFunctions.isDarkMode(context);
     return TRoundedContainer(
-      showBorder:true,
-      backgroundColor : dark ? TColors.dark :TColors.white,
-      padding: const EdgeInsets.only(top: TSizes.sm , bottom: TSizes.sm , right: TSizes.sm, left: TSizes.md),
-
+      showBorder: true,
+      backgroundColor: dark ? TColors.dark : TColors.white,
+      padding: const EdgeInsets.only(
+          top: TSizes.sm, bottom: TSizes.sm, right: TSizes.sm, left: TSizes.md),
       child: Row(
         children: [
-
           /// textfield
 
           Flexible(
-            child:TextFormField(
+            child: TextFormField(
               decoration: const InputDecoration(
                 hintText: 'Have a promo code? Enter here',
                 border: InputBorder.none,
@@ -33,20 +33,24 @@ class TCouponCode extends StatelessWidget {
                 enabledBorder: InputBorder.none,
                 errorBorder: InputBorder.none,
                 disabledBorder: InputBorder.none,
-              ) ,
+              ),
             ),
           ),
 
-
           /// button
           SizedBox(
-            width:80,child:ElevatedButton(onPressed: (){},
-            style: ElevatedButton.styleFrom(
-              foregroundColor: dark ? TColors.white.withOpacity(0.5) : TColors.dark.withOpacity(0.5),
-              backgroundColor: Colors.grey.withOpacity(0.2),
-              side: BorderSide(color: Colors.grey.withOpacity(0.1)),
-            ), child: const Text('Apply'),
-          ),
+            width: 80,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                foregroundColor: dark
+                    ? TColors.white.withOpacity(0.5)
+                    : TColors.dark.withOpacity(0.5),
+                backgroundColor: Colors.grey.withOpacity(0.2),
+                side: BorderSide(color: Colors.grey.withOpacity(0.1)),
+              ),
+              child: const Text('Apply'),
+            ),
           ),
         ],
       ),

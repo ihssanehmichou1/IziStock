@@ -15,9 +15,17 @@ dependencies:
   http: ^1.1.0
   intl: ^0.18.1
   logger: ^2.0.1
+  lottie: ^2.7.0
   url_launcher: ^6.0.13
   flutter_native_splash: ^2.3.2
   smooth_page_indicator: ^1.1.0
+  carousel_slider: ^4.2.1
+  connectivity_plus: ^5.0.1
+
+  #Firebase
+  firebase_core: ^2.27.1
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.13.1
 
 
   #Icons
@@ -27,6 +35,8 @@ dependencies:
   #State Management
   get: ^4.6.5
   get_storage: ^2.1.1
+  readmore: ^2.2.0
+  flutter_rating_bar: ^4.0.1
 
 
 dev_dependencies:

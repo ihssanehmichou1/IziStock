@@ -4,12 +4,13 @@ import 'package:izistock/common/widgets/appbar/appbar.dart';
 import '../../../../utils/constants/sizes.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
-  const AddNewAddressScreen({Key? key});
+  const AddNewAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TAppBar(showBackArrow: true, title: Text('Add new Address')),
+      appBar:
+          const TAppBar(showBackArrow: true, title: Text('Add new Address')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
@@ -17,57 +18,69 @@ class AddNewAddressScreen extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
                 ),
                 const SizedBox(height: TSizes.spaceBtwInputFields),
                 TextFormField(
-                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.mobile), labelText: 'Phone Number'),
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.mobile),
+                      labelText: 'Phone Number'),
                 ),
                 const SizedBox(height: TSizes.spaceBtwInputFields),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building_31), labelText: 'Street'),
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.building_31),
+                            labelText: 'Street'),
                       ),
                     ),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code), labelText: 'Postal Code'),
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.code),
+                            labelText: 'Postal Code'),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: TSizes.spaceBtwInputFields),
+                const SizedBox(height: TSizes.spaceBtwInputFields),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building), labelText: 'City'),
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.building),
+                            labelText: 'City'),
                       ),
                     ),
                     const SizedBox(width: TSizes.spaceBtwInputFields),
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.activity), labelText: 'State'),
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Iconsax.activity),
+                            labelText: 'State'),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: TSizes.spaceBtwInputFields),
                 TextFormField(
-                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Country'),
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.global), labelText: 'Country'),
                 ),
                 const SizedBox(height: TSizes.defaultSpace),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('Save'),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
+                    child: const Text('Save'),
                   ),
                 ),
               ],

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../utils/constants/sizes.dart';
 
-class TGridLayout extends StatelessWidget{
+class TGridLayout extends StatelessWidget {
   const TGridLayout({
     super.key,
     required this.itemCount,
@@ -15,22 +15,20 @@ class TGridLayout extends StatelessWidget{
   final Widget? Function(BuildContext, int) itemBuilder;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: itemCount,
       shrinkWrap: true,
       padding: EdgeInsets.zero,
       physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SlverGridDelegateWithFixedCrossAxisCount(
-        corssAxisCount: 2,
-        mainAxisCount: TSizes.gridViewSpacing,
-        crossAxisSpacing: TSizes.gridViewSpacing,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
         mainAxisExtent: 288,
+        crossAxisSpacing: TSizes.gridViewSpacing,
       ),
       itemBuilder: itemBuilder,
     );
   }
 }
 
-class SlverGridDelegateWithFixedCrossAxisCount {
-}
+class SlverGridDelegateWithFixedCrossAxisCount {}
