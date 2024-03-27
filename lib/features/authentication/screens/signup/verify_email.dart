@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:izistock/data/repositories/authentication/authentication_repository.dart';
 import 'package:izistock/features/authentication/controllers/signup/verify_email_controller.dart';
 
-import '../../../../../utils/constants/image_strings.dart';
-import '../../../../../utils/constants/sizes.dart';
-import '../../../../../utils/constants/text_String.dart';
-import '../../../../../utils/helpers/helper_functions.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/constants/text_String.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key, this.email});

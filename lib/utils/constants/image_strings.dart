@@ -18,4 +18,5 @@ class TImages {
   static const String daceranimation = "";
   static const String successFullRegisterScreen = "";
   static const String successfullRegisterAnimation = "";
+  static const String docerAnimation = "";
 }

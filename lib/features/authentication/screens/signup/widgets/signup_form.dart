@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:izistock/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:izistock/features/authentication/screens/signup/widgets/terms_conditions.dart';
-import 'package:izistock/features/authentication/screens/signup/widgets/verify_email.dart';
+import 'package:izistock/features/authentication/screens/signup/verify_email.dart';
 import 'package:izistock/utils/constants/text_String.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 import 'package:izistock/utils/validators/validation.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:izistock/data/repositories/authentication/authentication_repository.dart';
 import 'package:izistock/data/repositories/user/user_repository.dart';
-import 'package:izistock/features/authentication/screens/signup/widgets/verify_email.dart';
+import 'package:izistock/features/authentication/screens/signup/verify_email.dart';
 import 'package:izistock/utils/constants/image_strings.dart';
 import 'package:izistock/utils/popups/full_screen_loader.dart';
 import 'package:izistock/utils/popups/loaders.dart';
