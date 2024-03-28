@@ -1,8 +1,13 @@
  class TFirebaseException implements Exception{
 
   final String code;
+  final String message;
 
-  TFirebaseException(this.code);
+  const TFirebaseException(this.code, [this.message = 'An unexpected format error occurred . Please check your input.']);
+
+  factory TFirebaseException.fromMessage(String message){
+    return TFirebaseException(message);
+  }
 
   String getMessage(String code) {
     switch (code) {

@@ -75,7 +75,7 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code);
+      throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
     } catch (e) {
@@ -89,7 +89,7 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code);
+      throw TFirebaseException(e.code).message;
     } on FormatException {
       throw const TFormatException('Invalid format for email.');
     } on PlatformException catch (e) {
@@ -117,7 +117,7 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code);
+      throw TFirebaseException(e.code).message;
     } on FormatException {
       throw const TFormatException('Invalid format for email.');
     } on PlatformException catch (e) {
@@ -136,7 +136,7 @@ class AuthenticationRepository extends GetxController {
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw TFirebaseException(e.code);
+      throw TFirebaseException(e.code).message;
     } on FormatException catch (_){
       throw const TFormatException();
     } on PlatformException catch (e) {

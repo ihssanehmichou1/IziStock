@@ -37,7 +37,7 @@ class TPlatformException implements Exception{
       case 'internal-error':
         return 'Internal error. Please try again later.';
       default:
-        return ' a unspected plateform, Please try again.';
+        return ' a inspected platform, Please try again.';
     }
   }
 
