@@ -3,6 +3,7 @@ import 'package:izistock/common/widgets/custom_shapes/containers/rounded_contain
 import 'package:izistock/common/widgets/texts/product_price_text.dart';
 import 'package:izistock/common/widgets/texts/product_title_text.dart';
 import 'package:izistock/common/widgets/texts/section_heading.dart';
+import 'package:izistock/features/shop/models/product_model.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
 import '../../../../../common/widgets/chips/choice_chip.dart';
@@ -10,7 +11,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class TProductAttributes extends StatelessWidget {
-  const TProductAttributes({super.key});
+  const TProductAttributes({super.key, required ProductModel product});
 
   @override
   Widget build(BuildContext context) {

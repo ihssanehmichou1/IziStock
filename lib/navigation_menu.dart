@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:izistock/features/shop/screens/wishlist/wishlist.dart';
 
+import 'features/personalization/screens/settings/settings.dart';
 import 'features/shop/screens/home/home.dart';
-import 'features/shop/screens/store/widgets/store.dart';
+import 'features/shop/screens/store/store.dart';
 import 'utils/constants/colors.dart';
 import 'utils/helpers/helper_functions.dart';
 
@@ -39,7 +40,7 @@ class NavigationMenu extends StatelessWidget {
 
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [const HomeScreen(), const StoreScreen(),const FavouriteScreen(),
+  final screens = [const HomeScreen(), const StoreScreen(),const FavouriteScreen(),const SettingsScreen(),
     Container(color: Colors.deepPurple),
     Container(color: Colors.pink),
     Container(color: Colors.blue)];

@@ -6,9 +6,12 @@ import 'package:izistock/features/personalization/screens/address/add_new_addres
 import '../../../common/widgets/network_manager.dart';
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../data/repositories/address/address_repository.dart';
+import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/helpers/cloud_helper_functions.dart';
 import '../../../utils/popups/full_screen_loader.dart';
 import '../../../utils/popups/loaders.dart';
+import '../models/adress/address_model.dart';
 import '../screens/address/widgets/single_address.dart';
 
 class AddressController extends GetxController {
@@ -27,11 +30,11 @@ class AddressController extends GetxController {
   final Rx<AddressModel> selectedAddress = AddressModel.empty().obs;
   final addressRepository = Get.put(AddressRepository());
 
-///
+  ///
   Future<List<AddressModel>> getAllUserAddresses() async{
     try{
-        final addresses = await addressRepository.fetchUserAddresses();
-        selectedAddress.value = addresses.firstWhere((element) => element.selectedAddress, orElse: () => AddressModel.empty());
+      final addresses = await addressRepository.fetchUserAddresses();
+      selectedAddress.value = addresses.firstWhere((element) => element.selectedAddress ,orElse: () => AddressModel.empty());
       return addresses;
     }
     catch (e){
@@ -43,11 +46,11 @@ class AddressController extends GetxController {
 
     try{
       Get.defaultDialog(
-          title: '',
-          onWillPop: () async {return false;},
-          barrierDismissible: false,
-          backgroundColor: Colors.transparent,
-          content: const ICircularLoader(),
+        title: '',
+        onWillPop: () async {return false;},
+        barrierDismissible: false,
+        backgroundColor: Colors.transparent,
+        content: const ICircularLoader(),
       );
 
 
@@ -70,20 +73,34 @@ class AddressController extends GetxController {
 
     }
 
-}
-/// add new adress
-     Future addNewAddresses() async{
+  }
+  /// add new adress
+  Future addNewAddresses() async{
+    // try{
+    //   // start
+    //   TFullScreenLoader = await NetworkManager.instance.isConnected();
+    //   if(!isConnected){
+    //     TFullScreenLoader.stopLoading();
+    //     return;
+    //   }
+    //   // from validatiom
+    //   if(!addressFormKey.currentState!.validate()){
+    //     TFullScreenLoader.stopLoading();
+    //     return ;
+    //   }
     try{
-      // start
-      TFullScreenloader = await NetworkManager.instance.isConnected();
+      TFullScreenLoader.openLoadingDialog('Storing Address...', TImages.docerAnimation);
+
+
+      final isConnected = await NetworkManager.instance.isConnected();
       if(!isConnected){
         TFullScreenLoader.stopLoading();
         return;
       }
       // from validatiom
-      if(!addressFormKey.currentState!.validate()){
+      if(!addressFormKey.currentState!.validate()) {
         TFullScreenLoader.stopLoading();
-        return ;
+        return;
       }
       // save
       final address = AddressModel(
@@ -103,27 +120,25 @@ class AddressController extends GetxController {
       address.id = id;
       await selectedAddress(address);
 
-       //remove
+      //remove
       TFullScreenLoader.stopLoading();
-
-
-       // Show Success Message
+      // Show Success Message
       TLoaders.successSnackBar(title:'Congratulations', message: 'Your address has been saved successfully.');
 
 
-       //Refresh Addresses Data
-       refreshData.toggle();
+      //Refresh Addresses Data
+      refreshData.toggle();
 
 
-        // Reset fields
-       resetFormFields();
+      // Reset fields
+      resetFormFields();
 
 
       // Redirect
-       Navigator.of(Get.context!).pop();
+      Navigator.of(Get.context!).pop();
 
 
-       } catch (e) {
+    } catch (e) {
       // Remove Loader
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Address not found', message: e.toString());
@@ -152,12 +167,13 @@ class AddressController extends GetxController {
                       shrinkWrap: true,
                       itemCount: snapshot.data!.length,
                       itemBuilder:(_, index) =>TSingleAddress(
-                    address: snapshot.data! [index],
-                      onTap: () async {
-                        await selectAddress(snapshot.data! [index]);
-                        Get.back();
-                      },
-                    ),
+                        address: snapshot.data! [index],
+                        // : () async {
+                        //   await SelectAddress(snapshot.data! [index]);
+                        //   Get.back();
+                        // }
+                         selectedAddress: true,
+                      ),
                     );
                   },
                 ),
@@ -175,17 +191,15 @@ class AddressController extends GetxController {
   }
 
 
-       /// Function to reset form fields
-       void resetFormFields() {
-       name.clear();
-       phoneNumber.clear();
-       street.clear();
-       postalCode.clear();
-       city.clear();
-       state.clear();
-       country.clear();
-       addressFormKey.currentState?.reset();
-    }
-     }
-
-
+  /// Function to reset form fields
+  void resetFormFields() {
+    name.clear();
+    phoneNumber.clear();
+    street.clear();
+    postalCode.clear();
+    city.clear();
+    state.clear();
+    country.clear();
+    addressFormKey.currentState?.reset();
+  }
+}

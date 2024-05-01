@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 class TProductPriceText extends StatelessWidget {
   const TProductPriceText({
-    super.key, // corrected super.key to Key? key
+    super.key,
     this.currencySign = '\$',
     required this.price,
     this.isLarge = false,
     this.maxLines = 1,
-    this.lineThrough = false, // corrected lineTnrough to lineThrough
+    this.lineThrough = false,
   });
 
-  final String currencySign, price;
+  final Object currencySign, price;
   final int maxLines;
   final bool isLarge;
-  final bool lineThrough; // corrected lineTnrough to lineThrough
+  final bool lineThrough;
 
   @override
   Widget build(BuildContext context) {

@@ -2,16 +2,18 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:izistock/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:izistock/features/personalization/models/adress/address_model.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class TSingleAddress extends StatelessWidget {
-  const TSingleAddress({super.key, required this.selectedAddress});
+  const TSingleAddress({super.key,
+    required this.selectedAddress, this.address});
 
   final bool selectedAddress;
-
+ final AddressModel? address;
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);

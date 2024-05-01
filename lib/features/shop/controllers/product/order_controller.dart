@@ -1,12 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 import '../../../../common/widgets/success_screen/success_screen.dart';
+import '../../../../data/repositories/authentication/authentication_repository.dart';
 import '../../../../navigation_menu.dart';
 import '../../../../utils/constants/enums.dart';
 import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/popups/full_screen_loader.dart';
+import '../../../../utils/popups/loaders.dart';
 import '../../../personalization/controllers/address_controller.dart';
+import '../../screens/order/widgets/order_model.dart';
+import '../../screens/order/widgets/order_repository.dart';
 import 'cart_controller.dart';
 import 'checkout_controller.dart';
 
@@ -39,15 +45,15 @@ class OrderController extends GetxController {
           'Processing your order', TImages.pencilAnimation);
 
       // Get user authentication Id
-      final userId = AuthenticationRepository.instance.authUser.uid;
+      final userId = AuthenticationRepository.instance.authUser!.uid;
       if (userId.isEmpty) return;
 
 
       // Add Details
       final order = OrderModel(
 // Generate a unique ID for the order
-        id: Uniquekey().toString(),
-        userid: userId,
+        id: UniqueKey().toString(),
+        userId: userId,
         status: OrderStatus.pending,
         totalAmount: totalAmount,
         orderDate: DateTime.now(),

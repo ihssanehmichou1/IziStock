@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../common/widgets/brands/brand_show_case.dart';
+import '../../../../../common/widgets/shimmer/boxesShimmer.dart';
+import '../../../../../common/widgets/shimmer/list_title_shimmer.dart';
+import '../../../../../data/repositories/categories/category_model.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/helpers/cloud_helper_functions.dart';
 import '../../../controllers/brand_controller.dart';
 
 class CategoryBrands extends StatelessWidget {
@@ -15,7 +19,7 @@ class CategoryBrands extends StatelessWidget {
     return FutureBuilder(
       future: controller.getBrandsForCategory(category.id),
       builder: (context, snapshot) {
-        final loader = Column(
+        const loader = Column(
           children: [
             TListTileShimmer(),
             SizedBox(height: TSizes.spaceBtwItems),

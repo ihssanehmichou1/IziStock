@@ -1,16 +1,18 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:izistock/features/shop/models/payment_tile.dart';
 
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 
-class PaymentMethodeModel{
+class PaymentMethodModel{
   String name;
   String image;
 
-  PaymentMethodeModel({required this.image,required this.name});
+  PaymentMethodModel({required this.image,required this.name});
 
-  static PaymentMethodeModel empty() => PaymentMethodeModel(image: '', name: '');
+  static PaymentMethodModel empty() => PaymentMethodModel(image: '', name: '');
 
   @override
   void onInit() {
@@ -25,7 +27,7 @@ class PaymentMethodeModel{
             child: Container(
               padding: const EdgeInsets.all(TSizes.lg),
               child: Column(
-                crossAxisAlignment: CrossAxisALignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TSectionHeading(title: 'Select Payment Method', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwSections),

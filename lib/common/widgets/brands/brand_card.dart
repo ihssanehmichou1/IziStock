@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izistock/common/widgets/brands/brand_model.dart';
 import 'package:izistock/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:izistock/common/widgets/images/t_circular_image.dart';
 import 'package:izistock/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -11,11 +12,13 @@ import '../../../utils/constants/sizes.dart';
 
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
-    super.key,
-    this.onTap,
+    Key? key,
     required this.showBorder,
-  });
+    required this.brand,
+    this.onTap,
+  }) : super(key: key);
 
+  final BrandModel brand;
   final bool showBorder;
   final void Function()? onTap;
 
@@ -40,19 +43,25 @@ class TBrandCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),
-            const Expanded(
-                child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TBrandTitleWithVerifiedIcon(
-                  title: 'Nike',
-                  brandTextSizes: TextSizes.large,
-                  maxLines: 3,
-                  brandTextSize: TextSizes.medium,
-                ),
-              ],
-            ))
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TBrandTitleWithVerifiedIcon(
+                    title: brand.name,
+                    brandTextSizes: TextSizes.large,
+                    maxLines: 1,
+                    brandTextSize: TextSizes.large, // Taille de texte par défaut pour le titre de la marque
+                  ),
+                  Text(
+                    '${brand.productsCount ?? 0} products',
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.labelMedium,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -10,6 +10,8 @@ class UserController extends GetxController{
 
   final userRepository = Get.put(UserRepository());
 
+  get username => null;
+
   /// Save user Record from any Registration provider
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try{

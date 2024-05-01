@@ -19,4 +19,22 @@ class TImages {
   static const String successFullRegisterScreen = "";
   static const String successfullRegisterAnimation = "";
   static const String docerAnimation = "";
+  static const String paypal = "";
+  static const String creditCard = "";
+  static const String paystack = "";
+  static const String paytm = "";
+  static const String masterCard = "";
+  static const String visa = "";
+  static const String applePay = "";
+  static const String googlePay = "";
+
+
+  //
+  static const String pencilAnimation = "";
+  static const String orderCompletedAnimation = "";
+
+
+  //
+   static const String user = "assets/images/user/user_1077063.png";
+
 }

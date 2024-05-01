@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "202586376542",
+    "project_id": "izistock",
+    "storage_bucket": "izistock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202586376542:android:68f4985941c695002ee7cf",
+        "android_client_info": {
+          "package_name": "com.example.eco_java"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202586376542-j6cpm15r9f6frcau7st79ckg55qe6bhv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdlKjG40jff6vJ0t2gfJgBcAJ27AlMy9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202586376542-j6cpm15r9f6frcau7st79ckg55qe6bhv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "202586376542-gq2c3vh1iu47hrjdkk500r5q5b2l5ih8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecoJava"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,7 @@
 
 import 'package:get/get.dart';
 
-class HomeController extends GetController{
+class HomeController extends GetxController{
   static HomeController get instance => Get.find();
 
   final carouselCurrentIndex = 0.obs;
@@ -9,7 +9,4 @@ class HomeController extends GetController{
   void updatePageIndicator(index){
     carouselCurrentIndex.value = index;
   }
-}
-
-class GetController {
 }

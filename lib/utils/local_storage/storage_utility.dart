@@ -1,10 +1,10 @@
 import 'package:get_storage/get_storage.dart';
 
 class TLocalStorage {
-  static final TLocalStorage _instance = TLocalStorage._internal();
+  static final TLocalStorage instance = TLocalStorage._internal();
 
   factory TLocalStorage() {
-    return _instance;
+    return instance;
   }
 
   TLocalStorage._internal();
@@ -29,5 +29,9 @@ class TLocalStorage {
   // Clear all data in storage
   Future<void> clearAll() async {
     await _storage.erase();
+  }
+
+  Future<void> writeData(String key, List<Map<String, dynamic>> cartItemStrings) async {
+    await _storage.write(key, '');
   }
 }

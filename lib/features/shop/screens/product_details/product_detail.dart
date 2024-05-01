@@ -63,9 +63,9 @@ class ProductDetail extends StatelessWidget {
                     trimCollapsedText: 'Show more',
                     trimExpandedText: 'Less',
                     moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
 
                   ///reviews

@@ -98,8 +98,7 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
-  /// [ReAuthenticate] ReAuthenticate user
-  /// [EmailAuthentication] Forget Password
+
   /// [GoogleAuthentication] Google
   Future<UserCredential?> signInWithGoogle() async {
     try {
@@ -145,5 +144,6 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
 
 }

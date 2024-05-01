@@ -6,9 +6,9 @@ import 'circular_container.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
-    super.key,
+    Key? key,
     required this.child,
-  });
+  }) : super(key: key);
 
   final Widget child;
 

@@ -4,6 +4,7 @@ import 'package:izistock/common/widgets/images/t_circular_image.dart';
 import 'package:izistock/common/widgets/texts/product_price_text.dart';
 import 'package:izistock/common/widgets/texts/product_title_text.dart';
 import 'package:izistock/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
+import 'package:izistock/features/shop/models/product_model.dart';
 import 'package:izistock/utils/constants/enums.dart';
 import 'package:izistock/utils/helpers/helper_functions.dart';
 
@@ -12,7 +13,7 @@ import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class TProductMetaData extends StatelessWidget {
-  const TProductMetaData({super.key});
+  const TProductMetaData({super.key, required ProductModel product});
 
   @override
   Widget build(BuildContext context) {

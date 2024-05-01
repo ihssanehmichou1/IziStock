@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../utils/exceptions/firebase_exceptions.dart';
 import '../../../../utils/exceptions/platform_exceptions.dart';
+import '../../models/product_model.dart';
 
 class ProductRepository extends GetxController {
   static ProductRepository get instance => Get.find();
@@ -81,11 +82,16 @@ class ProductRepository extends GetxController {
 
   Future<List<ProductModel>> getProductsForCategory({required String categoryId, int limit = -1}) async {
     try {
+
       final productCategoryQuery = limit == -1
+
           ? await _db.collection('ProductCategory').where('category.Id', isEqualTo: categoryId).get()
           : await _db.collection('ProductCategory').where('category.Id', isEqualTo: categoryId).limit(limit).get();
+
       List<String> productIds = productCategoryQuery.docs.map((doc) => doc['productId'] as String).toList();
+
       final productsQuery = await _db.collection('Products').where(FieldPath.documentId, whereIn: productIds).get();
+
       List<ProductModel> products = productsQuery.docs.map((doc) => ProductModel.fromSnapshot(doc)).toList();
       return products;
     } on FirebaseException catch (e) {

@@ -6,7 +6,7 @@ import 'package:izistock/common/widgets/icons/t_circular_icon.dart';
 import '../../../../features/shop/controllers/product/favourites_controller.dart';
 
 class TFavouriteIcon extends StatelessWidget {
-  const TFavouriteIcon({super.key});
+  const TFavouriteIcon({super.key, required String productId});
 
   @override
   Widget build(BuildContext context) {

@@ -1,18 +1,28 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:izistock/common/widgets/brands/brand_model.dart';
 import 'package:izistock/common/widgets/layouts/grid_layout.dart';
 import 'package:izistock/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:izistock/common/widgets/texts/section_heading.dart';
-
-import '../../../../../common/widgets/brands/brand_show_case.dart';
-import '../../../../../utils/constants/image_strings.dart';
+import 'package:izistock/features/shop/screens/all_products/all_products.dart';
+import 'package:izistock/features/shop/screens/store/widgets/category_brands.dart';
+import '../../../../../data/repositories/categories/category_model.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../../../utils/helpers/cloud_helper_functions.dart';
+import '../../../controllers/category_controller.dart';
+import '../../product_details/widgets/vertical_product_shimmer.dart';
 
 class TCategoryTab extends StatelessWidget {
-  const TCategoryTab({super.key}); // corrected super.key
-
+  const TCategoryTab({super.key, required this.category});
+  // corrected super.key
+  final CategoryModel category;
   @override
   Widget build(BuildContext context) {
+    final controller = CategoryController.instance;
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -22,24 +32,41 @@ class TCategoryTab extends StatelessWidget {
           child: Column(
             children: [
               // Brands
-              const TBrandShowcase(images: [
-                TImages.promoBanner1,
-                TImages.promoBanner1,
-                TImages.promoBanner1
-              ]),
+              CategoryBrands(category: category),
+              const SizedBox(height: TSizes.spaceBtwItems),
               // Products
-              const SizedBox(height: TSizes.spaceBtwItems),
-              TSectionHeading(
-                title: 'You might like',
-                showActionButton: true,
-                onPressed: () {},
+              FutureBuilder(
+                  future: controller.getCategoryProducts(categoryId: category.id),
+                  builder: (context, snapshot) {
+
+
+                    ///
+                    final response = TCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: const TVerticalProductShimmer());
+                    if(response != null) return response;
+
+
+                    ///
+                    final products = snapshot.data!;
+
+
+                    return Column(
+                      children: [
+                        TSectionHeading(
+                            title: 'You might like',
+                            onPressed: () => Get.to(AllProducts(
+                              title: category.name,
+                              futureMethode: controller.getCategoryProducts(categoryId: category.id , limit: -1),
+                            ))),
+                        const SizedBox(height: TSizes.spaceBtwItems),
+                        TGridLayout(
+                            itemCount: products.length,
+                            itemBuilder: (_, index) => const TProductCardVertical(product: products[index])),
+
+                      ],
+                    );
+                  }
               ),
-              const SizedBox(height: TSizes.spaceBtwItems),
-              TGridLayout(
-                itemCount: 4,
-                itemBuilder: (_, index) => const TProductCardVertical(),
-              ),
-              const SizedBox(height: TSizes.spaceBtwItems),
+
             ],
           ),
         ), // removed the extra closing bracket here
@@ -47,3 +74,4 @@ class TCategoryTab extends StatelessWidget {
     );
   }
 }
+
